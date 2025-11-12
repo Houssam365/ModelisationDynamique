@@ -1,26 +1,13 @@
 public class Jeu {
     public static void main(String[] args) {
-
-
-
-        Character knight = new Knight();
-        knight.setWeapon(new SwordBehavior());
-        knight.fight();
+        Logger logger = Logger.getInstance();
 
         Character troll = new Troll();
         troll.setWeapon(new AxeBehavior());
-        troll.fight(); // Chopping with an axe
+        troll.fight();
+        logger.info("Troll gets Axe");
 
-        Character queen = new Queen();
-        queen.setWeapon(new KnifeBehavior());
-        queen.fight(); // Cutting with a knife
-
-        Character king = new King();
-        king.setWeapon(new BowAndArrowBehavior());
-        king.fight();
-
-        System.out.println("King changes weapon...");
-        king.setWeapon(new HammerBehavior());
-        king.fight(); // Smashing with a hammer
+        troll.setWeapon(new BowAndArrowBehavior());
+        logger.warning("Troll cannot use Bow properly");
     }
 }
